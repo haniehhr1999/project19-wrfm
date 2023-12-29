@@ -12,7 +12,7 @@ function App() {
   const [openMenu, setOpenMenu] = useState(false);
   const [showArrow, setShowArrow] = useState(false);
   const [showSelectOptionComponent, setShowSelectOptionComponent] = useState(false);
-  
+
   const [showProductionData, setShowProductionData] = useState(false);
 
   const optionSelects =['SM-01' , 'SM-02' , 'SPH-01' , 'SPH-02', 'SPH-03' , 'SPH-04', 'SPH-05' , 'SPH-06', 'SPH-07' , 'SPH-08', 'SPH-09' , 'SPH-10', 'SPH-11' , 'JR-01' , 'JR-02' , 'JR-03' , 'JR-04' , 'JR-05' , 'JR-06' , 'JR-07' , 'JR-08' , 'JR-09', 'JR-10' , 'JR-11' ]
@@ -52,7 +52,7 @@ function App() {
             <HomeIcon />
           </div>
           {
-            showSelectOptionComponent ? <SelectOption option={option} /> :
+            showSelectOptionComponent ? <SelectOption option={option} showProductionData={showProductionData} setShowProductionData={setShowProductionData} /> :
             <>
               <FormControl fullWidth>
                 <InputLabel id="demo-simple-select-label">Choose the Well</InputLabel>

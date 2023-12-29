@@ -2,8 +2,8 @@ import { Button } from '@mui/material'
 import React, { useState } from 'react'
 import ProductionData from './ProductionData';
 
-const SelectOption = ({option}) => {
-  const [showProductionData, setShowProductionData] = useState(false);
+const SelectOption = ({option , setShowProductionData , showProductionData}) => {
+//   const [showProductionData, setShowProductionData] = useState(false);
   const [bgBlue, setBgBlue] = useState('blue');
   
 

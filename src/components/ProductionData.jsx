@@ -4,7 +4,7 @@ import Grid from '@mui/material/Unstable_Grid2'; // Grid version 2
 
 const ProductionData = () => {
   return (
-    <div style={{position: 'absolute', margin:'auto' , top:'0', left:'0', bottom: '0', right: '0' , backgroundColor:'#fffafa' }}>
+    <div style={{position: 'absolute', margin:'auto', width:'500px', height:'100px' , top:'0', left:'0', bottom: '0', right: '0' , backgroundColor:'#fffafa' }}>
         <Grid container spacing={2}>
             <Grid xs={4}>
                 <div>7800 BBL/D</div>
