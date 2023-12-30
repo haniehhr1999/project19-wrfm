@@ -2,10 +2,13 @@ import './App.css';
 import MenuIcon from '@mui/icons-material/Menu';
 import ArrowCircleLeftIcon from '@mui/icons-material/ArrowCircleLeft';
 import HomeIcon from '@mui/icons-material/Home';
-import { Button, FormControl, InputLabel, MenuItem, Select, Stack } from '@mui/material';
+
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import { Accordion, AccordionDetails, AccordionSummary, Button, FormControl, InputLabel, MenuItem, Select, Stack, Typography } from '@mui/material';
 import { useState } from 'react';
 import SelectOption from './components/SelectOption';
 import ProductionData from './components/ProductionData';
+
 
 function App() {
   const [option, setOption] = useState('');
@@ -54,7 +57,7 @@ function App() {
           {
             showSelectOptionComponent ? <SelectOption option={option} showProductionData={showProductionData} setShowProductionData={setShowProductionData} /> :
             <>
-              <FormControl fullWidth>
+              {/* <FormControl fullWidth>
                 <InputLabel id="demo-simple-select-label">Choose the Well</InputLabel>
                 <Select
                   labelId="demo-simple-select-label"
@@ -67,7 +70,24 @@ function App() {
                     optionSelects.map((optionSelect , index) => <MenuItem key={index} value={optionSelect}>{optionSelect}</MenuItem>)
                   }
                 </Select>
-              </FormControl>
+              </FormControl> */}
+
+              <Accordion>
+                <AccordionSummary
+                  expandIcon={<ExpandMoreIcon />}
+                  aria-controls="panel1a-content"
+                  id="panel1a-header"
+                >
+                  <Typography>Choose the Well</Typography>
+                </AccordionSummary>
+
+                <AccordionDetails>
+                  {
+                    optionSelects.map((optionSelect , index) => <MenuItem onClick={handleChange} key={index} value={optionSelect}>{optionSelect}</MenuItem>)
+                  }
+                </AccordionDetails>
+
+              </Accordion>
               <div>
                 <Button style={{backgroundColor:'#FFFAFA' , width: '100%', color:'#000', margin: '1vh 0'}} variant="contained">North Manifold</Button>
               </div>
