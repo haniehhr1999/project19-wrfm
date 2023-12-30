@@ -4,25 +4,13 @@ import { Box, Button, Modal } from '@mui/material';
 
 
 const ProductionData = ({setShowProductionData}) => {
-    const [open, setOpen] = useState(false);
-    const handleOpen = () => setOpen(true);
-    const handleClose = () => setOpen(false);
+    
 
-    const style = {
-        position: 'absolute',
-        top: '50%',
-        left: '50%',
-        transform: 'translate(-50%, -50%)',
-        width: 400,
-        bgcolor: 'background.paper',
-        border: '2px solid #000',
-        boxShadow: 24,
-        p: 4,
-      };
+    
 
   return (
     <div style={{position: 'absolute', margin:'auto', width:'500px', height:'100px' , top:'0', left:'0', bottom: '0', right: '0' , backgroundColor:'#fffafa' }}>
-        <Button onClick={handleOpen}>Open modal</Button>
+        {/* <Button onClick={handleOpen}>Open modal</Button>
         <Modal
             open={open}
             onClose={handleClose}
@@ -32,7 +20,7 @@ const ProductionData = ({setShowProductionData}) => {
         <Box sx={style}>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus, mollitia error numquam est laboriosam, dolore quibusdam esse velit commodi cumque consectetur illum, eligendi et. Labore quam aut molestias est magni.
         </Box>
-        </Modal>
+        </Modal> */}
 
 
         {/* <Grid container spacing={2}>

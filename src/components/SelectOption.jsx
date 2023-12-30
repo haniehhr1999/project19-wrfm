@@ -1,6 +1,9 @@
 import { Button } from '@mui/material'
 import React, { useState } from 'react'
-import ProductionData from './ProductionData';
+import BasicModalProductionData from './BasicModalProductionData';
+import BasicModal from './BasicModalProductionData';
+import BasicModalMaintenanceData from './BasicModalMaintenanceData';
+import BasicModalWorkPermis from './BasicModalWorkPermis';
 
 const SelectOption = ({option , setShowProductionData , showProductionData}) => {
 //   const [showProductionData, setShowProductionData] = useState(false);
@@ -16,14 +19,13 @@ const SelectOption = ({option , setShowProductionData , showProductionData}) => 
         {option}
         </h4>
         <div>
-            <Button onClick={() => setShowProductionData(!showProductionData)} style={{backgroundColor:'#FFFAFA' , width: '100%', color:'#000', margin: '1vh 0'}} variant="contained">Production data</Button>
-            <Button onClick={handleOpen}>Open modal</Button>
+            <BasicModalProductionData name={'Production Data'} />
         </div>
         <div>
-            <Button style={{backgroundColor:'#FFFAFA' , width: '100%', color:'#000', margin: '1vh 0'}} variant="contained">Maintenance Data</Button>
+            <BasicModalMaintenanceData name={'Maintenance Data'} />
         </div>
         <div>
-            <Button style={{backgroundColor:'#FFFAFA' , width: '100%', color:'#000', margin: '1vh 0'}} variant="contained">Work Permits</Button>
+            <BasicModalWorkPermis      name={'WorkPermis'}/>
         </div>
         <div>
             <Button style={{backgroundColor:'#FFFAFA' , width: '100%', color:'#000', margin: '1vh 0'}} variant="contained">Overview</Button>
