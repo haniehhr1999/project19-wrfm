@@ -1,6 +1,6 @@
 import React from 'react'
 
-const MaintenanceData = () => {
+const MaintenanceData = ({setShowMaintenanceData}) => {
   return (
     <div>MaintenanceData</div>
   )

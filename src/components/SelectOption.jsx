@@ -4,8 +4,10 @@ import ProductionData from './ProductionData';
 
 const SelectOption = ({option , setShowProductionData , showProductionData}) => {
 //   const [showProductionData, setShowProductionData] = useState(false);
-  const [bgBlue, setBgBlue] = useState('blue');
-  
+  const [open, setOpen] = useState(false);
+    const handleOpen = () => setOpen(true);
+    // const handleClose = () => setOpen(false);
+ 
 
   return (
     <div >
@@ -15,6 +17,7 @@ const SelectOption = ({option , setShowProductionData , showProductionData}) => 
         </h4>
         <div>
             <Button onClick={() => setShowProductionData(!showProductionData)} style={{backgroundColor:'#FFFAFA' , width: '100%', color:'#000', margin: '1vh 0'}} variant="contained">Production data</Button>
+            <Button onClick={handleOpen}>Open modal</Button>
         </div>
         <div>
             <Button style={{backgroundColor:'#FFFAFA' , width: '100%', color:'#000', margin: '1vh 0'}} variant="contained">Maintenance Data</Button>

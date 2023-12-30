@@ -1,11 +1,41 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Grid from '@mui/material/Unstable_Grid2'; // Grid version 2
+import { Box, Button, Modal } from '@mui/material';
 
 
-const ProductionData = () => {
+const ProductionData = ({setShowProductionData}) => {
+    const [open, setOpen] = useState(false);
+    const handleOpen = () => setOpen(true);
+    const handleClose = () => setOpen(false);
+
+    const style = {
+        position: 'absolute',
+        top: '50%',
+        left: '50%',
+        transform: 'translate(-50%, -50%)',
+        width: 400,
+        bgcolor: 'background.paper',
+        border: '2px solid #000',
+        boxShadow: 24,
+        p: 4,
+      };
+
   return (
     <div style={{position: 'absolute', margin:'auto', width:'500px', height:'100px' , top:'0', left:'0', bottom: '0', right: '0' , backgroundColor:'#fffafa' }}>
-        <Grid container spacing={2}>
+        <Button onClick={handleOpen}>Open modal</Button>
+        <Modal
+            open={open}
+            onClose={handleClose}
+            aria-labelledby="modal-modal-title"
+            aria-describedby="modal-modal-description"
+        >
+        <Box sx={style}>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus, mollitia error numquam est laboriosam, dolore quibusdam esse velit commodi cumque consectetur illum, eligendi et. Labore quam aut molestias est magni.
+        </Box>
+        </Modal>
+
+
+        {/* <Grid container spacing={2}>
             <Grid xs={4}>
                 <div>7800 BBL/D</div>
                 <svg width="30" height="30" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -47,7 +77,7 @@ const ProductionData = () => {
                 <div>130 BBL/D</div>
                 <div>Water Production</div>
             </Grid>
-        </Grid>
+        </Grid> */}
     </div>
   )
 }
